@@ -17,13 +17,26 @@ public class ListProcessor {
     }
 
     public List<Person> peopleOlderThanEighteen(List<Person> people) {
-        // TODO
-        return null;
+        return people.stream()
+                .filter(p -> p.getAge() > 18)
+                .collect(Collectors.toList());
     }
 
     public List<Person> peopleWhoseNameStartsWithA(List<Person> people) {
-        // TODO
-        return null;
+        return people.stream()
+                .filter(p -> p.getName().charAt(0) == 'A')
+                .collect(Collectors.toList());
+    }
+
+    public List<Person> peopleOrderByNameAsc(List<Person> people) {
+        return people.stream()
+                .sorted((p1, p2) -> p1.getName().compareTo(p2.getName()))
+                .collect(Collectors.toList());
+    }
+
+    public Boolean arePeopleOlderThanEighteen(List<Person> people) {
+        return people.stream()
+                .allMatch(p -> p.getAge() > 18);
     }
 
 }
