@@ -6,12 +6,39 @@ public class Person {
 
     private String name;
     private int age;
+    private double money;
+    private String currency;
     private List<Hobby> hobbies;
 
     public Person(String name, int age, List<Hobby> hobbies) {
         this.name = name;
         this.age = age;
         this.hobbies = hobbies;
+        this.money = 0D;
+    }
+
+    public Person(String name, int age, double money, String currency, List<Hobby> hobbies) {
+        this.name = name;
+        this.age = age;
+        this.money = money;
+        this.currency = currency;
+        this.hobbies = hobbies;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
     }
 
     public String getName() {
